@@ -53,7 +53,6 @@ class MomsController < ApplicationController
         format.json { render json: @mom.errors, status: :unprocessable_entity }
       end
     end
-  end
    respond_to do |format|
       if @profile.save
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
