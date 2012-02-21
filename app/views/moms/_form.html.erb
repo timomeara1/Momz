@@ -1,0 +1,59 @@
+<%= form_for(@mom) do |f| %>
+  <% if @mom.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mom.errors.count, "error") %> prohibited this mom from being saved:</h2>
+
+      <ul>
+      <% @mom.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= form_for(@profile) do |f| %>
+    <% if @profile.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+        <ul>
+        <% @profile.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+  
+    <div class="field">
+      <%= f.label :age %><br />
+      <%= f.number_field :age %>
+    </div>
+    <div class="field">
+      <%= f.label :neighborhood %><br />
+      <%= f.text_field :neighborhood %>
+    </div>
+    <div class="field">
+      <%= f.label :hobby %><br />
+      <%= f.text_field :hobby %>
+    </div>
+    <div class="field">
+      <%= f.label :children %><br />
+      <%= f.text_field :children %>
+    </div>
+    <div class="field">
+      <%= f.label :mom_id %><br />
+      <%= f.collection_select :mom_id, Mom.all, :id, :user %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

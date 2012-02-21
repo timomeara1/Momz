@@ -1,0 +1,41 @@
+<h1>Listing profiles</h1>
+
+<table>
+  <tr>
+    <th>Age</th>
+    <th>Neighborhood</th>
+    <th>Hobby</th>
+    <th>Children</th>
+    <th>Mom</th>
+    <th>Tvshow</th>
+    <th>Pets</th>
+    <th>Education</th>
+    <th>Work</th>
+    <th>Photo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @profiles.each do |profile| %>
+  <tr>
+    <td><%= profile.mom_id %></td>
+    <td><%= profile.age %></td>
+    <td><%= profile.neighborhood %></td>
+    <td><%= profile.hobby %></td>
+    <td><%= profile.children %></td>
+    <td><%= profile.tvshow %></td>
+    <td><%= profile.pets %></td>
+    <td><%= profile.education %></td>
+    <td><%= profile.work %></td>
+    <td><%= profile.photo_id %></td>
+    <td><%= link_to 'Show', profile %></td>
+    <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+    <td><%= link_to 'Destroy', profile, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mom', new_mom_path %>

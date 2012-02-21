@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @mom.user %>
+</p>
+<p>
+
+  <% @mom.profiles.each do |profile| %>
+
+    <li> Age - <%= profile.age%></li>
+    <li> Neighborhood - <%= profile.neighborhood %></li>
+    <li> Hobbies - <%= profile.hobby %></li>
+    <li> Favorite TV shows - <%= profile.tvshow %></li>
+    <li> Pets - <%= profile.pets %></li>
+    <li> Kids - <%= profile.children %></li>
+    <li> Education - <%= profile.education %></li>
+    <li> Work - <%= profile.work %></li>
+    <li> Mom - <%= profile.mom_id %></li>
+  
+    
+
+    <% end %>
+    
+
+<b>
+<%= link_to 'Add Profile', new_profile_path(@profile) %> |
+<%= link_to 'Edit Profile', edit_profile_path(@profile) %> |
+<%= link_to 'Back', moms_path %>
